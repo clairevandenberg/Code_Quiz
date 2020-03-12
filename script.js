@@ -29,7 +29,7 @@ setTime ();
 //toggling with css questions so when one question is asked the previous question disappears//
 
 function startQuizFun() {
-    var x = document.getElementById("questionOne");
+    var x = document.getElementById("startQuiz");
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
