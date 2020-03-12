@@ -25,3 +25,59 @@ function sendMessage() {
 }
 
 setTime ();
+
+//toggling with css questions so when one question is asked the previous question disappears//
+
+function startQuizFun() {
+    var x = document.getElementById("questionOne");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+function questionOneFunc() {
+    var x = document.getElementById("questionOne");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+  function questionTwoFunc() {
+    var x = document.getElementById("questionTwo");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+  function questionThreeFunc() {
+    var x = document.getElementById("questionThree");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+  function questionFourFunc() {
+    var x = document.getElementById("questionFour");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+  function questionFiveFunc() {
+    var x = document.getElementById("questionFive");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }

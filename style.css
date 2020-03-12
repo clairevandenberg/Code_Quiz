@@ -5,3 +5,50 @@
     margin: 100px;
   }
   
+#questionOne {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 20px;
+}
+
+#questionTwo {
+     width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: pink;
+    margin-top: 20px;
+}
+
+#questionThree {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: yellow;
+    margin-top: 20px;
+}
+
+#questionFour {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: orange;
+    margin-top: 20px;
+}
+
+#questionFour {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: greenyellow;
+    margin-top: 20px;
+}
+
+#questionFive {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: orange;
+    margin-top: 20px;
+}
