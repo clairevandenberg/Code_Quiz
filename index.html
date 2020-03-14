@@ -12,7 +12,7 @@
 <h1 class="timer"></h1>
 <div id="time"></div>
 
-<h1>Code Quiz </h1>
+<h1>Code Quiz </h1> 
 <button id= "startQuiz" onclick="startQuizFun()"> Click to start Quiz</button>
  
 <div id="questionOne">
@@ -26,7 +26,7 @@ Question 1...
 </div>
 
 
-<div id="questionTwo">
+<div id="questionTwo"class="hidden"> 
 Question 2...
 <button id= "option21"> Answer 1</button>
 <button id= "option22"> Answer 2</button>
@@ -37,7 +37,7 @@ Question 2...
 </div>
    
  
-<div id="questionThree">
+<div id="questionThree" class="hidden"> 
 Question 3...
 <button id= "option31"> Answer 1</button>
 <button id= "option32"> Answer 2</button>
@@ -48,7 +48,7 @@ Question 3...
 </div>
        
 
-<div id="questionFour">
+<div id="questionFour" class="hidden">
 Question 4...
 <button id= "option41"> Answer 1</button>
 <button id= "option42"> Answer 2</button>
@@ -60,18 +60,30 @@ Question 4...
            
 
 
-<div id="questionFive">
+<div id="questionFive" class="hidden"> 
 Question 5...
 <button id= "option51"> Answer 1</button>
 <button id= "option52"> Answer 2</button>
 <button id= "option53"> Answer 3</button>
 <button id= "option54"> Answer 3</button>
 
-<button onclick="questionFiveFunc()">Next Question</button>
+<button onclick="questionFiveFunc()">Finish Quiz</button>
 </div>
            
 
-<script src="./Script.js"></script>
 
+<div id="score" class="hidden"> 
+Your Score!! Add Your Initials To Save Your Score
+<button id= "initials"> Save Your Score</button>
+</div>
+    
+
+
+<div id="highestScores" class="hidden"> 
+Highest Scores
+
+               
+    <script src="./Script.js"></script>
+    
 </body>
 </html>

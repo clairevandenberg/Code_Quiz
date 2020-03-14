@@ -1,27 +1,32 @@
 //setting the timer//
 
 var timer = document.querySelector("#time");
-
-var secondsLeft = 60;
+var initialAdder = document.querySelector("#initials")
+var secondsLeft = 10;
+var questionOneFunc= document.querySelector("#questionOne")
+var startQuizFun= document.querySelector("#startQuiz")
+var questionTwoFunc= document.querySelector("#questionTwo")
+var questionThreeFunc= document.querySelector("#questionThree")
+var questionFourFunc= document.querySelector("#questionFOur")
+var questionFiveFunc= document.querySelector("#questionFive")
 
 function setTime() {
-var timerInterval =setInterval(function() {
-secondsLeft--;
-timer.textContent = secondsLeft + "time left";
-console.log(secondsLeft)
+  var timerInterval = setInterval(function() {
+  secondsLeft--;
+  timer.textContent = secondsLeft + "time left";
+
 
 //when timer ends//
 if (secondsLeft === 0) {
-    clearInterval(timerInterval)
+  timer.textContent = "";
+   clearInterval(timerInterval)
     sendMessage ();
 }
-console.log(secondsLeft)
-
 }, 1000);
 }
 //timer has ended message//
 function sendMessage() {
-    timer.textContent = "Your Time is Up";
+timer.textContent = "Your Time is Up";
 }
 
 setTime ();
@@ -29,55 +34,60 @@ setTime ();
 //toggling with css questions so when one question is asked the previous question disappears//
 
 function startQuizFun() {
-    var x = document.getElementById("startQuiz");
-    if (x.style.display === "none") {
-      x.style.display = "block";
+    if (startQuiz.style.display === "none") {
+      startQuiz.style.display = "block";
     } else {
-      x.style.display = "none";
+      startQuiz.style.display = "none";
     }
   }
 
 function questionOneFunc() {
-    var x = document.getElementById("questionOne");
-    if (x.style.display === "none") {
-      x.style.display = "block";
+    if (questionOne.style.display === "none") {
+      questionOne.style.display = "block";
     } else {
-      x.style.display = "none";
+      questionOne.style.display = "none";
     }
   }
 
   function questionTwoFunc() {
-    var x = document.getElementById("questionTwo");
-    if (x.style.display === "none") {
-      x.style.display = "block";
+    if (questionTwo.style.display === "none") {
+      questionTwo.style.display = "block";
     } else {
-      x.style.display = "none";
+      questionTwo.style.display = "none";
     }
   }
 
   function questionThreeFunc() {
-    var x = document.getElementById("questionThree");
-    if (x.style.display === "none") {
-      x.style.display = "block";
+    if (questionThree.style.display === "none") {
+      questionThree.style.display = "block";
     } else {
-      x.style.display = "none";
+      questionThree.style.display = "none";
     }
   }
 
   function questionFourFunc() {
-    var x = document.getElementById("questionFour");
-    if (x.style.display === "none") {
-      x.style.display = "block";
+    if (questionFour.style.display === "none") {
+      questionFour.style.display = "block";
     } else {
-      x.style.display = "none";
+      questionFour.style.display = "none";
     }
   }
 
   function questionFiveFunc() {
-    var x = document.getElementById("questionFive");
-    if (x.style.display === "none") {
-      x.style.display = "block";
+    if (questionFive.style.display === "none") {
+      questionFive.style.display = "block";
     } else {
-      x.style.display = "none";
+      questionFive.style.display = "none";
     }
   }
+
+  //Saving Initials To Save Password In Local Storage//
+function displayMessage (type, message) {
+msgDiv.testContent = messgage ;
+msgDiv.setAttribute ("class", type);
+}
+console.log (initialAdder);
+initialAdder.addEventListener("click", function(initials) {
+  event.preventDefault();
+});
+

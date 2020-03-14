@@ -52,3 +52,23 @@
     background-color: orange;
     margin-top: 20px;
 }
+
+#score {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: plum;
+    margin-top: 20px;
+}
+
+#highestScores {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: salmon;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none
+};
