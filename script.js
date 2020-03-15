@@ -4,14 +4,79 @@ var timer = document.querySelector("#time");
 var initialAdder = document.querySelector("#initials")
 var secondsLeft = 60;
 var questionOneFunc= document.querySelector("#questionOne")
-var startQuizFun= document.querySelector("#startQuiz")
+var startQuizFun= document.querySelector("#beginQuiz")
 var questionTwoFunc= document.querySelector("#questionTwo")
 var questionThreeFunc= document.querySelector("#questionThree")
 var questionFourFunc= document.querySelector("#questionFOur")
 var questionFiveFunc= document.querySelector("#questionFive")
 var highestScore= document.querySelector("#highScore")
+var submitAnswer= document.querySelector("#submitAnswerBtn")
+var endTimer= document.querySelector("#endTimer")
 
-function setTime() {
+//Buttons//
+function buttons() {
+startQuizFun.addEventListener('click', startQuiz);
+submitAnswer.addEventListener('click', nextQuestion);
+}
+
+//Questions & Answers//
+let quizQuestions = [
+{
+question : "What does HTML stand For?",
+A : "Hyper Text Markup Language",
+B : "HyperLinks That Mark Languages",
+C : "Hyperlinks and text Markup Langauges",
+D : "Home Tool Markup Language",
+correct : "A"
+},
+
+{
+question : "What is the body;s largest organ?",
+A : "Lungs",
+B : "Skin",
+C : "Small Intestine",
+D : "Blood",
+correct : "B"
+},
+
+{
+question : "What is the symbol of potassium?",
+A : "P",
+B : "Q",
+C : "K",
+D : "O",
+correct : "C"
+}
+
+{
+question : "Which planet has the most gravity?",
+A : "Earth",
+B : "Pluto",
+C : "Mucery",
+D : "Jupiter",
+correct : "D" 
+}
+
+{
+question : "How many tastebuds does the average human have?",
+A : "10,000",
+B : "100,000",
+C : "50,000",
+D : "1,000",
+correct : "A" 
+}
+];
+
+//Displaying Questions & Answers//
+function buildQuiz () {
+
+quizQuestions
+}
+
+
+
+//Timer/
+function setTimer () {
   var timerInterval = setInterval(function() {
   secondsLeft--;
   timer.textContent = secondsLeft + "time left";
@@ -29,7 +94,9 @@ function sendMessage() {
 timer.textContent = "Your Time is Up";
 }
 
-setTime ();
+setTimer ();
+
+
 
 //toggling with css questions so when one question is asked the previous question disappears//
 
