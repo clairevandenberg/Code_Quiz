@@ -2,19 +2,19 @@
 
 var timer = document.querySelector("#time");
 var initialAdder = document.querySelector("#initials")
-var secondsLeft = 10;
+var secondsLeft = 60;
 var questionOneFunc= document.querySelector("#questionOne")
 var startQuizFun= document.querySelector("#startQuiz")
 var questionTwoFunc= document.querySelector("#questionTwo")
 var questionThreeFunc= document.querySelector("#questionThree")
 var questionFourFunc= document.querySelector("#questionFOur")
 var questionFiveFunc= document.querySelector("#questionFive")
+var highestScore= document.querySelector("#highScore")
 
 function setTime() {
   var timerInterval = setInterval(function() {
   secondsLeft--;
   timer.textContent = secondsLeft + "time left";
-
 
 //when timer ends//
 if (secondsLeft === 0) {
