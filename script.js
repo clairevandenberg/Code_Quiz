@@ -8,15 +8,19 @@ var questionElement= document.querySelector("#questionEl");
 var answerBtn = document.querySelector("#answerBtn");
 var timer = document.querySelector("#timer");
 var secondsLeft = 60;
+var initials = document.querySelector("initials")
+var initialsBtn = document.querySelector("initialsBtn")
 
 startBtn.addEventListener("click", startButton () );
 
 function startButton () {
 console.log('started');
+timer.classList.remove("hidden");
 startBtn.classList.add('hidden');
 currentQuestionIndex = 0
 questionContainer.classList.remove('hidden');
 setNextQuestion ()
+timer ()
 nextButton.classList.remove("hidden");
 }
 
@@ -26,7 +30,7 @@ nextButton.classList.remove("hidden");
     timer.textContent = secondsLeft + "time left";
   
   //when timer ends//
-  if (secondsLeft === 0) {
+  if (secondsLeft === 0){
     timer.textContent = "";
      clearInterval(timerInterval)
       sendMessage ();
@@ -48,7 +52,7 @@ function showQuestion(questions) {
   question.answer.forEach(answer => {
     const button = document.querySelector('button')
     button.innerText= answer.innerText
-  button.classList.add('btn')
+  button.classList.add('btn') {
   if (answer.correct) {
     button.dataset.correct = answer.correct 
   }
@@ -62,37 +66,38 @@ function resetState {
   while (answerButtonElement.firstChild) {
     answerButtonElement.removeChild
     (answerButtonElement.firstChild)
-    answerBtn
   }
 }
 
 function selectAnswer(e)
-   const selectButton = e.target
-   const correct = selectButton.dataset.correct 
-   setStatusClass(document.body,correct)
-   Array.from(answerButtonElement.children).forEach(button =>{
-    setStatusClass(button, button.dataset.correct));
-   if (shuffledQuestions.length >currentQuestionIndex +1)
+   const selectButton = e.target;
+   const correct = selectButton.dataset.correct;
+   setStatusClass(document.body,correct);
+   Array.from(answerButtonElement.children).forEach(button =>
+    setStatusClass(button, button.dataset.correct)); {
+   if (shuffledQuestions.length >currentQuestionIndex +1);
     nextButton.classList.remove("hide");
   } else {
-   startButton.innerText = "Restart"
-   startButton.classlist.remove("hidden")
- }
+   startButton.innerText "Restart";
+   startButton.classlist.remove("hidden");
+   localStorage.setItem("currentQuestionIndex");
+   localStorage.setItem("answerButtonElement");
+ };
 
 
   function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
-      element.classList.add("correct")
+      element.classList.add("correct");
     } else 
-      element.classlist.add("wrong")
+      element.classlist.add("wrong");
     }
   
 var questions = [
   {
     questions: "What does HTML stand For?",
-    A : "Hyper Text Markup Language", correct: false 
-    B : "HyperLinks That Mark Languages", correct: false 
+    A : "Hyper Text Markup Language", correct: false
+    B : "HyperLinks That Mark Languages", correct: false
     C : "Hyperlinks and text Markup Langauges", correct: false 
     D : "Home Tool Markup Language", correct: false 
     },
@@ -131,3 +136,37 @@ var questions = [
     D : "1,000", correct: false 
     },
 ]
+
+renderLastRegistered();
+
+function displayMessage(type, message) {
+  msgDiv.textContent = message;
+  msgDiv.setAttribute("class", type);
+}
+
+function renderLastRegistered() {
+  var initials = localStorage.getItem("Your Initials");
+
+  if (initials === null) {
+    return;
+  }
+
+  initials.textContent = initials;
+}
+
+initialsBtn.addEventListener("click", function(event) {
+  event.preventDefault();
+
+  var initials = document.querySelector("#initials").value;
+  var correct = document.querySelector("#correct").value;
+  
+  if (initials === "") {
+    displayMessage("error", "initials cannot be blank");
+  } else {
+    displayMessage("success", "your initials & password were successfully saved");
+
+    localStorage.setItem("initials", initials);
+    localStorage.setItem("correct", correct);
+    renderLastRegistered();
+  }
+});
