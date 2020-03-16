@@ -6,18 +6,37 @@ var questionElement = document.querySelector("#question");
 var answerBtn= document.querySelector("#answerBtn");
 var questionElement= document.querySelector("#questionEl");
 var answerBtn = document.querySelector("#answerBtn");
-
+var timer = document.querySelector("#timer");
+var secondsLeft = 60;
 
 startBtn.addEventListener("click", startButton () );
 
 function startButton () {
-console.log('started')
+console.log('started');
 startBtn.classList.add('hidden');
 currentQuestionIndex = 0
 questionContainer.classList.remove('hidden');
 setNextQuestion ()
-nextButton.classList.remove("hidden")
+nextButton.classList.remove("hidden");
 }
+
+//setting timer//
+    var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timer.textContent = secondsLeft + "time left";
+  
+  //when timer ends//
+  if (secondsLeft === 0) {
+    timer.textContent = "";
+     clearInterval(timerInterval)
+      sendMessage ();
+  }
+  }, 1000);
+  
+  //timer has ended message//
+  function sendMessage() {
+  timer.textContent = "Your Time is Up";
+  }
 
 function setNextQuestion () {
   resetState()
@@ -48,20 +67,18 @@ function resetState {
 }
 
 function selectAnswer(e)
- {
    const selectButton = e.target
    const correct = selectButton.dataset.correct 
    setStatusClass(document.body,correct)
    Array.from(answerButtonElement.children).forEach(button =>{
-    setStatusClass(button, button.dataset.correct)
-   })
-   jf (shuffledQuestions.length >currentQuestionIndex +1)
+    setStatusClass(button, button.dataset.correct));
+   if (shuffledQuestions.length >currentQuestionIndex +1)
     nextButton.classList.remove("hide");
- } else {
+  } else {
    startButton.innerText = "Restart"
    startButton.classlist.remove("hidden")
  }
-  }
+
 
   function setStatusClass(element, correct) {
     clearStatusClass(element)
@@ -73,48 +90,44 @@ function selectAnswer(e)
   
 var questions = [
   {
-    questionOne: "What does HTML stand For?",
-    A : "Hyper Text Markup Language",
-    B : "HyperLinks That Mark Languages",
-    C : "Hyperlinks and text Markup Langauges",
-    D : "Home Tool Markup Language",
-    correct : "A"
+    questions: "What does HTML stand For?",
+    A : "Hyper Text Markup Language", correct: false 
+    B : "HyperLinks That Mark Languages", correct: false 
+    C : "Hyperlinks and text Markup Langauges", correct: false 
+    D : "Home Tool Markup Language", correct: false 
     },
     
     {
-    questionTwo: "What is the body;s largest organ?",
-    A : "Lungs",
-    B : "Skin",
-    C : "Small Intestine",
-    D : "Blood",
+      questions: "What is the body;s largest organ?",
+    A : "Lungs", correct: false 
+    B : "Skin", correct: true
+    C : "Small Intestine", correct: false 
+    D : "Blood", correct: false 
     correct : "B"
     },
     
     {
-    questionThree : "What is the symbol of potassium?",
-    A : "P",
-    B : "Q",
-    C : "K",
-    D : "O",
+      questions : "What is the symbol of potassium?",
+    A : "P", correct: false 
+    B : "Q", correct: false 
+    C : "K", correct: true
+    D : "O", correct: false 
     correct : "C"
     },
     
     {
-    questionFour : "Which planet has the most gravity?",
-    A : "Earth",
-    B : "Pluto",
-    C : "Mucery",
-    D : "Jupiter",
-    correct : "D" 
+      questions : "Which planet has the most gravity?",
+    A : "Earth", correct: false 
+    B : "Pluto", correct: false 
+    C : "Mucery", correct: false 
+    D : "Jupiter", correct: true 
     },
     
     {
-    questionFive : "How many tastebuds does the average human have?",
-    A : "10,000",
-    B : "100,000",
-    C : "50,000",
-    D : "1,000",
-    correct : "A" 
+      questions : "How many tastebuds does the average human have?",
+    A : "10,000", correct: true 
+    B : "100,000", correct: false 
+    C : "50,000", correct: false 
+    D : "1,000", correct: false 
     },
-    
 ]
