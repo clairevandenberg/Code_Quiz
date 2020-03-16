@@ -1,5 +1,5 @@
 //Questions & Answers//
-let quizQuestions = [
+export const quizQuestions = [
     {
     questionOneFunc : "What does HTML stand For?",
     A : "Hyper Text Markup Language",

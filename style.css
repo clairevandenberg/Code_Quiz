@@ -1,35 +1,60 @@
-.button {
-    background-color: #283044;
-    color: white;
-    padding: 20px;
-    margin: 100px;
-  }
-  
-#questions {
-    width: 100%;
-    padding: 50px 0;
+body {
+    padding: 0;
+    margin: 0;
+    display:flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: fuchsia;
+}
+
+.container {
+width: 800px;
+max-width:80%;
+
+background-color: turquoise;
+border-radius: 5px;
+padding: 10px;
+box-shadow: 0 0 10px 2px;
+}
+
+.btn-answers {
+display: grid;
+grid-template-columns: repeat(2, auto);
+gap: 10px;
+margin: 20px 0;
+}
+
+.btn {
+    padding: 5px 10px;
     text-align: center;
     background-color: lightblue;
-    margin-top: 20px;
+    border: 1px solid; 
+    border-radius: 5px;
+    color: black; 
+    outline: none;
+    width: 49.5%;
+    gap: 10px;
 
 }
 
-#score {
-    width: 100%;
-    padding: 50px 0;
-    text-align: center;
-    background-color: plum;
-    margin-top: 20px;
+.btn:hover {
+    border-color: black
 }
 
-#highestScores {
-    width: 100%;
-    padding: 50px 0;
-    text-align: center;
-    background-color: salmon;
-    margin-top: 20px;
+.startBtn, .nextBtn {
+    font-size: 50px;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center ;
 }
 
 .hidden {
-    display: none
+    display: none;
 };

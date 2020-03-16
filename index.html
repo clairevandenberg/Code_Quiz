@@ -12,42 +12,31 @@
 
 <h1 class="timer"></h1>
 <div id="time"></div>
+</div>
 
 
 <div>
-<button class ="questions" id= "nextButton"> Click to start Quiz </button>
+<div class= "container">
+<div class ="hidden" id="questionContainer">
+<div id= "Question">Question</div>
+<div id= "answer-buttons" class = "btn-answers">
+<button class ="btn"> Answer 1 </button>
+<button class ="btn"> Answer 2 </button>
+<button class ="btn"> Answer 3 </button>
+<button class ="btn"> Answer 4 </button>
+</div>
 </div>
 
-<div class ="hidden" id="questionOne">
-<button class ="questions" id="nextButton"> Question One</button>
-</div>
 
-<div class ="hidden" id="questionTwo">
-<button class ="questions" id="nextButton"> Question Two</button>
+<div class= "controls">
+<button id = "startBtn" class="startBtn btn"> Start </button>
+<button id = "nextBtn" class="nextBtn btn hidden"> Next </button>
 </div>
-
-<div class ="hidden" id="questionThree">
-<button class ="questions" id="nextButton"> Question Three</button>
 </div>
-
-<div class ="hidden" id="questionFour">
-<button class ="questions" id="nextButton"> Question Four</button>
-</div>
-
-<div class ="hidden" id="questionFive">
-<button class ="questions" id="nextButton"> Question Five</button>
-</div>
-          
-<div class ="hidden">
-<button class ="score" id="initials"> Save Initials </button>
-</div>
-
-<div class ="hidden">
-<button class ="highestScores" id="highScore"> Highest Score </button>
-</div>
-
                
-<script src="./Script.js"></script>
-    
+<script src="./Script.js">
+</script>
 </body>
 </html>
+
+          

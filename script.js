@@ -1,105 +1,70 @@
-//importing questions from Questions.js//
-import * as SelectQuestion from "./Questions.js";
-var questions = SelectQuestion.myQuestions
+// Second Attempt of Quiz //
+var startQuiz = document.querySelector("#startBtn");
+var questionContainer = document.querySelector("#questionContainer");
+var questionElement = document.querySelector("#question");
+var answerBtn= document.querySelector("#answerBtn");
 
-//setting the timer//
+startBtn.addEventListener("click", startButton () );
 
-var timer = document.querySelector("#time");
-var initialAdder = document.querySelector("#initials")
-var secondsLeft = 60;
-var questionOneFunc= document.querySelector("#questionOne")
-var startQuizFun= document.querySelector("#beginQuiz")
-var questionTwoFunc= document.querySelector("#questionTwo")
-var questionThreeFunc= document.querySelector("#questionThree")
-var questionFourFunc= document.querySelector("#questionFOur")
-var questionFiveFunc= document.querySelector("#questionFive")
-var highestScore= document.querySelector("#highScore")
-var submitAnswer= document.querySelector("#submitAnswerBtn")
-var endTimer= document.querySelector("#endTimer")
-
-
-
-//Timer/
-function setTimer () {
-  var timerInterval = setInterval(function() {
-  secondsLeft--;
-  timer.textContent = secondsLeft + "time left";
-
-//when timer ends//
-if (secondsLeft === 0) {
-  timer.textContent = "";
-   clearInterval(timerInterval)
-    sendMessage ();
-}
-}, 1000);
-}
-//timer has ended message//
-function sendMessage() {
-timer.textContent = "Your Time is Up";
+function startButton () {
+console.log('started')
+startButton.classList.add('hidden');
+questionContainerElement.classList.remove('hidden');
+setNextQuestion ()
 }
 
-setTimer ();
-
-
-//Clicking buttons//
-document.getElementById("nextButton").addEventListener("click", displayQuestions)
-
-function displayQuestions () {
-  document.getElementById("nextButton").innerHTML = questionOne (); 
+function setNextQuestion () {
+  showQuestion [currentQuestionIndex];
 }
 
-//Make Question Visble//
-//document.getElementById("nextButton").style.visibility ="visible";
-
-
-
-
-//toggling with css questions so when one question is asked the previous question disappears//
-
-function startQuizFun() {
-  if (startQuiz.style.display === "none") {
-    startQuiz.style.display = "block";
-  } else {
-    startQuiz.style.display = "none";
-  }
+function showQuestion(questions) {
+  questionElement.innerText = question.question
 }
 
-function questionOneFunc() {
-  if (questionOne.style.display === "none") {
-    questionOne.style.display = "block";
-  } else {
-    questionOne.style.display = "none";
-  }
-}
-
-function questionTwoFunc() {
-  if (questionTwo.style.display === "none") {
-    questionTwo.style.display = "block";
-  } else {
-    questionTwo.style.display = "none";
-  }
-}
-
-function questionThreeFunc() {
-  if (questionThree.style.display === "none") {
-    questionThree.style.display = "block";
-  } else {
-    questionThree.style.display = "none";
-  }
-}
-
-function questionFourFunc() {
-  if (questionFour.style.display === "none") {
-    questionFour.style.display = "block";
-  } else {
-    questionFour.style.display = "none";
-  }
-}
-
-function questionFiveFunc() {
-  if (questionFive.style.display === "none") {
-    questionFive.style.display = "block";
-  } else {
-    questionFive.style.display = "none";
-  }
-}
+var questions = [
+  {
+    questionOne: "What does HTML stand For?",
+    A : "Hyper Text Markup Language",
+    B : "HyperLinks That Mark Languages",
+    C : "Hyperlinks and text Markup Langauges",
+    D : "Home Tool Markup Language",
+    correct : "A"
+    },
+    
+    {
+    questionTwo: "What is the body;s largest organ?",
+    A : "Lungs",
+    B : "Skin",
+    C : "Small Intestine",
+    D : "Blood",
+    correct : "B"
+    },
+    
+    {
+    questionThree : "What is the symbol of potassium?",
+    A : "P",
+    B : "Q",
+    C : "K",
+    D : "O",
+    correct : "C"
+    },
+    
+    {
+    questionFour : "Which planet has the most gravity?",
+    A : "Earth",
+    B : "Pluto",
+    C : "Mucery",
+    D : "Jupiter",
+    correct : "D" 
+    },
+    
+    {
+    questionFive : "How many tastebuds does the average human have?",
+    A : "10,000",
+    B : "100,000",
+    C : "50,000",
+    D : "1,000",
+    correct : "A" 
+    },
+    
+]
