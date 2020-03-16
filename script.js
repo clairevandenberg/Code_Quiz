@@ -70,7 +70,7 @@ function resetState {
   }
 }
 
-function selectAnswer(e)
+function selectAnswer(e) {
    const selectButton = e.target;
    const correct = selectButton.dataset.correct;
    setStatusClass(document.body,correct);
@@ -83,7 +83,8 @@ function selectAnswer(e)
    startButton.classlist.remove("hidden");
    localStorage.setItem("currentQuestionIndex");
    localStorage.setItem("answerButtonElement");
- };
+  }
+  };
 
 
   function setStatusClass(element, correct) {
