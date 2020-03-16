@@ -1,24 +1,31 @@
 // Second Attempt of Quiz //
 var startQuiz = document.querySelector("#startBtn");
-var questionContainer = document.querySelector("#questionContainer");
+var questionContainer= document.querySelector("#questionContainer");
 var questionElement = document.querySelector("#question");
 var answerBtn= document.querySelector("#answerBtn");
+var questionElement= document.querySelector("#questionEl");
+var answerBtn = document.querySelector("#answerBtn");
+
 
 startBtn.addEventListener("click", startButton () );
+answerBtn.addEventListener("click", () => {
+setNextQuestion()
+});
 
 function startButton () {
 console.log('started')
-startButton.classList.add('hidden');
-questionContainerElement.classList.remove('hidden');
+startBtn.classList.add('hidden');
+currentQuestionIndex = 0
+questionContainer.classList.remove('hidden');
 setNextQuestion ()
 }
 
 function setNextQuestion () {
-  showQuestion [currentQuestionIndex];
+  showQuestion(currentQuestionIndex);
 }
 
 function showQuestion(questions) {
-  questionElement.innerText = question.question
+  questionElement.innerText = question.question;
 }
 
 var questions = [
