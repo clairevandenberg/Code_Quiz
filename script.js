@@ -1,5 +1,6 @@
 // Second Attempt of Quiz //
 var startQuiz = document.querySelector("#startBtn");
+var startButton = document.querySelector("#starting");
 var nextButton = document.querySelector("#nextButton");
 var questionContainer= document.querySelector("#questionContainer");
 var questionElement = document.querySelector("#question");
@@ -15,7 +16,7 @@ var restart = document.querySelector("restart")
 startBtn.addEventListener("click", startButton () );
 
 function startButton () {
-console.log('started');
+console.log('starting');
 timer.classList.remove("hidden");
 startBtn.classList.add('hidden');
 currentQuestionIndex = 0
@@ -26,18 +27,19 @@ nextButton.classList.remove("hidden");
 }
 
 //setting timer//
+function setTimer () {
     var timerInterval = setInterval(function() {
     secondsLeft--;
     timer.textContent = secondsLeft + "time left";
   
   //when timer ends//
   if (secondsLeft === 0){
-    timer.textContent = "";
+    timer.textContent = secondsLeft + " ";
      clearInterval(timerInterval);
       sendMessage ();
   }
   }, 1000);
-  
+}
   //timer has ended message//
   function sendMessage() {
   timer.textContent = "Your Time is Up";
@@ -47,6 +49,8 @@ function setNextQuestion () {
   resetState()
   showQuestion(currentQuestionIndex);
 }
+setTimer ();
+
 
 function showQuestion(questions) {
   questionElement.innerText = question.question;
