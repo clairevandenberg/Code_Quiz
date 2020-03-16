@@ -2,8 +2,9 @@
 
 Test my code [here](https://clairevandeneberg.github.io/H4CodeQuixz/)
 
-Test yourself on this quiz. Score will be saved via your local storage when you enter your initials.
+Test yourself on this quiz. Timed Quiz which will save your score via your local storage when you enter your initials.
  
+My Test: 
 ![Image description](Starting.png)
 
-Made by Claire Vandenberg, 2020
+Made with JS, HTML, CSS by Claire Vandenberg, 2020
