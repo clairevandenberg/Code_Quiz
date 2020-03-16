@@ -1,5 +1,6 @@
 // Second Attempt of Quiz //
 var startQuiz = document.querySelector("#startBtn");
+var nextButton = document.querySelector("#nextButton");
 var questionContainer= document.querySelector("#questionContainer");
 var questionElement = document.querySelector("#question");
 var answerBtn= document.querySelector("#answerBtn");
@@ -8,9 +9,6 @@ var answerBtn = document.querySelector("#answerBtn");
 
 
 startBtn.addEventListener("click", startButton () );
-answerBtn.addEventListener("click", () => {
-setNextQuestion()
-});
 
 function startButton () {
 console.log('started')
@@ -18,16 +16,61 @@ startBtn.classList.add('hidden');
 currentQuestionIndex = 0
 questionContainer.classList.remove('hidden');
 setNextQuestion ()
+nextButton.classList.remove("hidden")
 }
 
 function setNextQuestion () {
+  resetState()
   showQuestion(currentQuestionIndex);
 }
 
 function showQuestion(questions) {
   questionElement.innerText = question.question;
+  question.answer.forEach(answer => {
+    const button = document.querySelector('button')
+    button.innerText= answer.innerText
+  button.classList.add('btn')
+  if (answer.correct) {
+    button.dataset.correct = answer.correct 
+  }
+  button.addEventListener("click", selectAnswer)
+  answerButtonsElement.appendChild (button)
+  })
 }
 
+function resetState {
+  nextButton.classlist.add("hidden") 
+  while (answerButtonElement.firstChild) {
+    answerButtonElement.removeChild
+    (answerButtonElement.firstChild)
+    answerBtn
+  }
+}
+
+function selectAnswer(e)
+ {
+   const selectButton = e.target
+   const correct = selectButton.dataset.correct 
+   setStatusClass(document.body,correct)
+   Array.from(answerButtonElement.children).forEach(button =>{
+    setStatusClass(button, button.dataset.correct)
+   })
+   jf (shuffledQuestions.length >currentQuestionIndex +1)
+    nextButton.classList.remove("hide");
+ } else {
+   startButton.innerText = "Restart"
+   startButton.classlist.remove("hidden")
+ }
+  }
+
+  function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+      element.classList.add("correct")
+    } else 
+      element.classlist.add("wrong")
+    }
+  
 var questions = [
   {
     questionOne: "What does HTML stand For?",
