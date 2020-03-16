@@ -70,7 +70,7 @@
 
 
 //Questions & Answers//
-l//et quizQuestions = [
+//let quizQuestions = [
  // {
  
 
