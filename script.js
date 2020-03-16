@@ -10,6 +10,7 @@ var timer = document.querySelector("#timer");
 var secondsLeft = 60;
 var initials = document.querySelector("initials")
 var initialsBtn = document.querySelector("initialsBtn")
+var restart = document.querySelector("restart")
 
 startBtn.addEventListener("click", startButton () );
 
@@ -32,7 +33,7 @@ nextButton.classList.remove("hidden");
   //when timer ends//
   if (secondsLeft === 0){
     timer.textContent = "";
-     clearInterval(timerInterval)
+     clearInterval(timerInterval);
       sendMessage ();
   }
   }, 1000);
@@ -50,22 +51,22 @@ function setNextQuestion () {
 function showQuestion(questions) {
   questionElement.innerText = question.question;
   question.answer.forEach(answer => {
-    const button = document.querySelector('button')
-    button.innerText= answer.innerText
-  button.classList.add('btn') {
+    const button = document.querySelector('button');
+    button.innerText= answer.innerText;
+  button.classList.add('btn');
   if (answer.correct) {
-    button.dataset.correct = answer.correct 
+    button.dataset.correct = answer.correct;
   }
-  button.addEventListener("click", selectAnswer)
+  button.addEventListener("click", selectAnswer);
   answerButtonsElement.appendChild (button)
-  })
+  });
 }
 
 function resetState {
-  nextButton.classlist.add("hidden") 
+  nextButton.classlist.add("hidden");
   while (answerButtonElement.firstChild) {
-    answerButtonElement.removeChild
-    (answerButtonElement.firstChild)
+    answerButtonElement.removeChild;
+    (answerButtonElement.firstChild);
   }
 }
 
@@ -78,7 +79,7 @@ function selectAnswer(e)
    if (shuffledQuestions.length >currentQuestionIndex +1);
     nextButton.classList.remove("hide");
   } else {
-   startButton.innerText "Restart";
+   startButton.innerText "restart";
    startButton.classlist.remove("hidden");
    localStorage.setItem("currentQuestionIndex");
    localStorage.setItem("answerButtonElement");
@@ -86,7 +87,7 @@ function selectAnswer(e)
 
 
   function setStatusClass(element, correct) {
-    clearStatusClass(element)
+    clearStatusClass(element);
     if (correct) {
       element.classList.add("correct");
     } else 
